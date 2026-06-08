@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  /* Parchment & Ink colors */
+  --color-pi-parchment: #F8F3EC;
+  --color-pi-parchment-dark: #EDE5D8;
+  --color-pi-parchment-border: #D8D0C4;
+  --color-pi-ink: #1A1A1A;
+  --color-pi-ink-mid: #6B5E50;
+  --color-pi-ink-muted: #9A8E7E;
+  --color-pi-ink-faint: #C8BFB0;
+  --color-pi-accent: #B5540B;
+  --color-pi-accent-light: #F0E6D8;
+
+  /* Font families */
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-dm-mono);
+}
+
+:root {
+  --pi-parchment: #F8F3EC;
+  --pi-parchment-dark: #EDE5D8;
+  --pi-parchment-border: #D8D0C4;
+  --pi-ink: #1A1A1A;
+  --pi-ink-mid: #6B5E50;
+  --pi-ink-muted: #9A8E7E;
+  --pi-ink-faint: #C8BFB0;
+  --pi-accent: #B5540B;
+  --pi-accent-light: #F0E6D8;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--pi-parchment);
+  color: var(--pi-ink-mid);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Eyebrow label pattern */
+.pi-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 10px;
+  color: var(--pi-accent);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.pi-eyebrow-line {
+  width: 24px;
+  height: 1.5px;
+  background: var(--pi-accent);
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Outline tag pattern */
+.pi-tag {
+  border: 1px solid var(--pi-ink);
+  color: var(--pi-ink);
+  font-family: var(--font-dm-mono), monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+/* Prose styles for Notion content */
+.pi-prose h2 {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--pi-ink);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.pi-prose h3 {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--pi-ink);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.pi-prose p {
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: var(--pi-ink-mid);
+  line-height: 1.8;
+}
+
+.pi-prose code {
+  font-family: var(--font-dm-mono), monospace;
+  background: var(--pi-parchment-dark);
+  padding: 2px 6px;
+  font-size: 13px;
+  color: var(--pi-ink);
+}
+
+.pi-prose blockquote {
+  border-left: 2.5px solid var(--pi-accent);
+  padding-left: 12px;
+  color: var(--pi-ink-muted);
+  font-style: italic;
+  margin: 16px 0;
+}
+
+.pi-prose ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.pi-prose li {
+  margin-bottom: 4px;
+  font-size: 15px;
+  color: var(--pi-ink-mid);
+  line-height: 1.7;
+}
+
+.pi-prose a {
+  color: var(--pi-accent);
+  text-decoration: underline;
+}
