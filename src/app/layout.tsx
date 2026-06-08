@@ -23,14 +23,14 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rashi Goel — Clinical Informatics & FHIR Interoperability",
+  title: "Rashi Goel — Health Informatics & Digital Health",
   description:
-    "HIM student building FHIR interoperability expertise at the intersection of clinical knowledge and health systems engineering.",
+    "A healthcare student at the intersection of clinical knowledge and technology, committed to improving how healthcare is delivered, experienced, and transformed.",
   metadataBase: new URL("https://rashigoel.io"),
   openGraph: {
-    title: "Rashi Goel — Clinical Informatics & FHIR Interoperability",
+    title: "Rashi Goel — Health Informatics & Digital Health",
     description:
-      "HIM student building FHIR interoperability expertise at the intersection of clinical knowledge and health systems engineering.",
+      "A healthcare student at the intersection of clinical knowledge and technology, committed to improving how healthcare is delivered, experienced, and transformed.",
     url: "https://rashigoel.io",
     siteName: "Rashi Goel",
     locale: "en_CA",

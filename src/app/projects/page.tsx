@@ -9,7 +9,7 @@ import { GitHubIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Rashi Goel — Projects",
   description:
-    "FHIR interoperability projects — Care Gap Dashboard case study and HL7 v2 → FHIR pipeline.",
+    "Projects and case studies at the intersection of healthcare and technology — clinical decision support, interoperability, and digital health.",
 };
 
 export default function ProjectsPage() {

@@ -9,7 +9,7 @@ import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoint
 export const metadata: Metadata = {
   title: "Rashi Goel — In the Field",
   description:
-    "Biweekly conversations with people building Canada's health systems.",
+    "Conversations with clinicians, informaticists, builders, and leaders shaping the future of healthcare.",
 };
 
 export default async function InterviewsPage() {
