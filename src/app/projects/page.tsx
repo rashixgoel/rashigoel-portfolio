@@ -9,7 +9,7 @@ import { GitHubIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Rashi Goel — Projects",
   description:
-    "Projects and case studies at the intersection of healthcare and technology — clinical decision support, interoperability, and digital health.",
+    "Projects and case studies at the intersection of healthcare and technology — clinical decision support, interoperability, digital health and more.",
 };
 
 export default function ProjectsPage() {
