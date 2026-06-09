@@ -165,7 +165,7 @@ export default function AboutPage() {
             },
             {
               label: "How I show up",
-              text: "With curiosity, consistency, and a willingness to go deep. I'm a student who is already building, already publishing, already in conversation with the people shaping this field.",
+              text: "With curiosity, consistency, and a willingness to go deep. I am a student who is building, publishing and having meaningful conversations with people shaping this field.",
             },
           ].map((card) => (
             <div

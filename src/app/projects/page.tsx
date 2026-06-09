@@ -4,7 +4,6 @@ import EyebrowLabel from "@/components/EyebrowLabel";
 import GhostNumber from "@/components/GhostNumber";
 import OutlineTag from "@/components/OutlineTag";
 import DemoPatientCallout from "@/components/DemoPatientCallout";
-import { GitHubIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Rashi Goel — Projects",
@@ -111,7 +110,7 @@ export default function ProjectsPage() {
 
           <div style={{ display: "flex", gap: "10px", marginBottom: "20px", flexWrap: "wrap" }}>
             <Link
-              href="https://github.com/rashigoel"
+              href="https://care-gap-dashboard-ycrrjq4u7a-uc.a.run.app"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -125,10 +124,28 @@ export default function ProjectsPage() {
                 fontWeight: 600,
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "6px",
               }}
             >
-              <GitHubIcon size={13} /> GitHub →
+              Live Prototype →
+            </Link>
+            <Link
+              href="https://youtu.be/YCpgPiaWoBE"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                border: "1.5px solid #1A1A1A",
+                color: "#1A1A1A",
+                fontSize: "11px",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                padding: "8px 16px",
+                textDecoration: "none",
+                fontWeight: 600,
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              Watch Demo →
             </Link>
           </div>
 
@@ -171,11 +188,11 @@ export default function ProjectsPage() {
                 What It Does
               </p>
               <p style={{ fontSize: "13px", color: "#6B5E50", lineHeight: 1.7, marginBottom: "10px" }}>
-                Four chronic conditions: Type 2 Diabetes, Hypertension, CKD, Hyperlipidemia. Eight
+                Four chronic conditions: Type 2 Diabetes, Hypertension, CKD, Hyperlipidemia. Nine
                 clinical rules: four monitoring rules for diagnosed patients + four screening rules
-                that catch undiagnosed disease from abnormal lab values. CRITICAL / HIGH / MEDIUM /
+                that catch undiagnosed disease from abnormal lab values + one medication review rule. CRITICAL / HIGH / MEDIUM /
                 LOW triage. Patient Panel, Patient Detail, Population Dashboard views. AI Clinical
-                Summary via GPT-4o. Works with any FHIR-compliant EHR.
+                Summary via Azure OpenAI GPT-4o. Works with any FHIR-compliant EHR.
               </p>
             </div>
 

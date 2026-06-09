@@ -58,8 +58,7 @@ export default async function Home() {
               marginBottom: "24px",
             }}
           >
-            A healthcare student obsessed with the intersection of clinical knowledge and
-            technology — and what becomes possible when the two meet.
+            Here to learn, contribute, and grow at the intersection of healthcare and technology.
           </p>
 
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "24px" }}>

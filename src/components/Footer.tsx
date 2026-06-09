@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { YouTubeIcon, LinkedInIcon } from "@/components/icons";
 
 export default function Footer() {
   return (
@@ -41,7 +41,7 @@ export default function Footer() {
 
         <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
           <Link
-            href="https://linkedin.com/in/rashigoel"
+            href="https://www.linkedin.com/in/-rashi-goel/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -50,16 +50,16 @@ export default function Footer() {
             <LinkedInIcon size={16} />
           </Link>
           <Link
-            href="https://github.com/rashigoel"
+            href="https://youtu.be/YCpgPiaWoBE"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
+            aria-label="YouTube"
             style={{ color: "#9A8E7E" }}
           >
-            <GitHubIcon size={16} />
+            <YouTubeIcon size={16} />
           </Link>
           <Link
-            href="mailto:rashigoel1832@gmail.com"
+            href="mailto:hello@rashigoel.io"
             aria-label="Email"
             style={{ color: "#9A8E7E" }}
           >

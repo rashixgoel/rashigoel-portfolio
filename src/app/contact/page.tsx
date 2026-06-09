@@ -61,13 +61,13 @@ export default function ContactPage() {
               icon: <LinkedInIcon size={20} />,
               label: "LinkedIn",
               value: "/in/rashigoel",
-              href: "https://linkedin.com/in/rashigoel",
+              href: "https://www.linkedin.com/in/-rashi-goel/",
             },
             {
               icon: <Mail size={20} />,
               label: "Email",
-              value: "rashi@rashigoel.io",
-              href: "mailto:rashigoel1832@gmail.com",
+              value: "hello@rashigoel.io",
+              href: "mailto:hello@rashigoel.io",
             },
           ].map(({ icon, label, value, href }) => (
             <Link

@@ -83,7 +83,7 @@ export default async function InterviewsPage() {
               Know someone doing important work in healthcare? Nominate them.
             </p>
             <Link
-              href="mailto:rashigoel1832@gmail.com?subject=Interview nomination"
+              href="mailto:hello@rashigoel.io?subject=Interview nomination"
               style={{
                 border: "1.5px solid #1A1A1A",
                 color: "#1A1A1A",
