@@ -3,15 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/#work", label: "Work" },
   { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/learning", label: "Learning" },
-  { href: "/blog", label: "Blog" },
-  { href: "/interviews", label: "Interviews" },
+  { href: "/about#experience", label: "Resume" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -19,11 +15,16 @@ export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  function isActive(href: string) {
+    if (href.includes("#")) return false;
+    return pathname === href;
+  }
+
   return (
     <header
       style={{
-        background: "#F8F3EC",
-        borderBottom: "2px solid #1A1A1A",
+        background: "var(--surface)",
+        borderBottom: "1px solid var(--border)",
         position: "sticky",
         top: 0,
         zIndex: 50,
@@ -31,23 +32,25 @@ export default function Nav() {
     >
       <nav
         style={{
-          maxWidth: "1024px",
+          maxWidth: "1200px",
           margin: "0 auto",
-          padding: "12px 24px",
+          padding: "0 32px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          height: "60px",
         }}
+        aria-label="Main navigation"
       >
         <Link
           href="/"
           style={{
-            fontFamily: "var(--font-playfair), Georgia, serif",
-            fontWeight: 700,
-            fontSize: "15px",
-            color: "#1A1A1A",
+            fontFamily: "var(--font-manrope), system-ui, sans-serif",
+            fontWeight: 800,
+            fontSize: "14px",
+            color: "var(--ink)",
             textDecoration: "none",
-            letterSpacing: "-0.01em",
+            letterSpacing: "0.04em",
           }}
         >
           RASHI GOEL
@@ -55,91 +58,103 @@ export default function Nav() {
 
         {/* Desktop */}
         <ul
+          className="hidden md:flex"
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "28px",
+            gap: "36px",
             listStyle: "none",
             margin: 0,
             padding: 0,
           }}
-          className="hidden md:flex"
         >
-          {links.map(({ href, label }) => {
-            const isActive = pathname === href;
-            return (
-              <li key={href}>
-                <Link
-                  href={href}
-                  style={{
-                    fontSize: "10px",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.07em",
-                    color: isActive ? "#1A1A1A" : "#9A8E7E",
-                    textDecoration: "none",
-                    borderBottom: isActive ? "1.5px solid #B5540B" : "none",
-                    paddingBottom: "2px",
-                    fontWeight: isActive ? 600 : 400,
-                  }}
-                >
-                  {label}
-                </Link>
-              </li>
-            );
-          })}
+          {links.map(({ href, label }) => (
+            <li key={label}>
+              <Link
+                href={href}
+                style={{
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  color: isActive(href) ? "var(--teal)" : "var(--muted)",
+                  textDecoration: "none",
+                  transition: "color 0.15s",
+                }}
+                onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "var(--ink)"; }}
+                onMouseLeave={(e) => { (e.target as HTMLElement).style.color = isActive(href) ? "var(--teal)" : "var(--muted)"; }}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         {/* Mobile toggle */}
         <button
           className="md:hidden"
           onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          style={{ color: "#1A1A1A", background: "none", border: "none", cursor: "pointer" }}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: "var(--ink)",
+            padding: "8px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "4px",
+          }}
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
+          {open ? (
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <line x1="2" y1="2" x2="16" y2="16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <line x1="16" y1="2" x2="2" y2="16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <line x1="2" y1="5" x2="16" y2="5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <line x1="2" y1="13" x2="16" y2="13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          )}
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       {open && (
         <div
           style={{
-            borderTop: "1px solid #D8D0C4",
-            background: "#F8F3EC",
+            borderTop: "1px solid var(--border)",
+            background: "var(--surface)",
           }}
         >
           <ul
             style={{
-              maxWidth: "1024px",
+              maxWidth: "1200px",
               margin: "0 auto",
-              padding: "16px 24px",
+              padding: "20px 32px 24px",
               display: "flex",
               flexDirection: "column",
-              gap: "16px",
+              gap: "20px",
               listStyle: "none",
             }}
           >
-            {links.map(({ href, label }) => {
-              const isActive = pathname === href;
-              return (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    style={{
-                      fontSize: "10px",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.07em",
-                      color: isActive ? "#B5540B" : "#9A8E7E",
-                      textDecoration: "none",
-                      fontWeight: isActive ? 600 : 400,
-                    }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              );
-            })}
+            {links.map(({ href, label }) => (
+              <li key={label}>
+                <Link
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    color: isActive(href) ? "var(--teal)" : "var(--ink)",
+                    textDecoration: "none",
+                  }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       )}
