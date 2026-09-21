@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EmailLink from "@/components/EmailLink";
 import { LinkedInIcon } from "@/components/icons";
 
 export default function Footer() {
@@ -26,9 +27,7 @@ export default function Footer() {
           >
             <LinkedInIcon size={17} />
           </a>
-          <a href="mailto:hello@rashigoel.io" className="mono">
-            hello@rashigoel.io
-          </a>
+          <EmailLink className="mono" />
         </div>
       </div>
 

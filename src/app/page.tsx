@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Shot from "@/components/Shot";
+import EmailLink from "@/components/EmailLink";
 import { shots } from "@/lib/shots";
-import { projectLinks, CONTACT_MAILTO } from "@/lib/projects";
+import { projectLinks, CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/projects";
 import { Arrow, BList, Eyebrow, Metrics, Tags } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -723,7 +724,11 @@ export default function HomePage() {
               </p>
 
               <div className="hero-btns btn-row-stack">
-                <a href={CONTACT_MAILTO} className="btn btn-primary">
+                <a
+                  href={CONTACT_MAILTO}
+                  className="btn btn-primary"
+                  aria-label={`Email Rashi Goel at ${CONTACT_EMAIL}`}
+                >
                   Email me
                 </a>
                 <a
@@ -734,6 +739,10 @@ export default function HomePage() {
                 >
                   LinkedIn <span aria-hidden="true">↗</span>
                 </a>
+              </div>
+
+              <div style={{ marginTop: "24px", fontSize: "14px" }}>
+                <EmailLink />
               </div>
             </div>
           </Reveal>

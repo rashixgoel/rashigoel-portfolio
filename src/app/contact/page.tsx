@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import EmailLink from "@/components/EmailLink";
 import { Eyebrow } from "@/components/ui";
 import { LinkedInIcon } from "@/components/icons";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Contact — Rashi Goel",
@@ -39,19 +41,22 @@ export default function ContactPage() {
         <div className="wrap">
           <Reveal>
             <div className="grid-2" style={{ maxWidth: "760px" }}>
-              <a
-                href="mailto:hello@rashigoel.io"
-                className="card card-hover"
-                style={{ textDecoration: "none", display: "block" }}
-              >
+              {/* A div, not an anchor: the copy button cannot be nested inside
+                  a link without the link swallowing its click. */}
+              <div className="card card-hover">
                 <p className="cap-h">Email</p>
-                <p style={{ fontSize: "17px", fontWeight: 700, marginBottom: "6px" }}>
-                  hello@rashigoel.io
-                </p>
-                <p className="mono" style={{ color: "var(--blue)" }}>
+                <div style={{ fontSize: "17px", fontWeight: 700, marginBottom: "2px" }}>
+                  <EmailLink />
+                </div>
+                <a
+                  href={CONTACT_MAILTO}
+                  className="mono"
+                  style={{ color: "var(--blue)", textDecoration: "none" }}
+                  aria-label={`Email Rashi Goel at ${CONTACT_EMAIL}`}
+                >
                   Send a message →
-                </p>
-              </a>
+                </a>
+              </div>
 
               <a
                 href="https://www.linkedin.com/in/-rashi-goel/"

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { Arrow, BList, Eyebrow, Tags } from "@/components/ui";
-import { CONTACT_MAILTO } from "@/lib/projects";
+import { CONTACT_EMAIL, CONTACT_MAILTO } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Experience — Rashi Goel",
@@ -129,7 +129,11 @@ export default function ExperiencePage() {
           </p>
 
           <div className="hero-btns btn-row-stack">
-            <a href={CONTACT_MAILTO} className="btn btn-primary">
+            <a
+              href={CONTACT_MAILTO}
+              className="btn btn-primary"
+              aria-label={`Email Rashi Goel at ${CONTACT_EMAIL}`}
+            >
               Email me
             </a>
             <Link href="/#work" className="btn btn-ghost">
