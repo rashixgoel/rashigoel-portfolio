@@ -83,7 +83,8 @@ export default function HomePage() {
               <h1 className="h1 hero-h1">
                 Healthcare has enough hard problems.
                 <br />
-                <span className="coral">Repetitive work</span> shouldn&rsquo;t be one of them.
+                <span className="coral">Repetitive work</span>{" "}
+                shouldn&rsquo;t be one of them.
               </h1>
               <p className="lede measure">
                 I&rsquo;m Rashi Goel, a Health Information Management student with hands-on
