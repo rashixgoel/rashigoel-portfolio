@@ -1,76 +1,40 @@
-"use client";
-
 import Link from "next/link";
-import { Mail } from "lucide-react";
 import { LinkedInIcon } from "@/components/icons";
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        borderTop: "1px solid var(--border)",
-        background: "var(--surface)",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "32px 32px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "16px",
-        }}
-      >
+    <footer className="foot on-dark">
+      <div className="wrap foot-inner">
         <div>
-          <span
-            style={{
-              fontFamily: "var(--font-manrope), system-ui, sans-serif",
-              fontWeight: 700,
-              fontSize: "13px",
-              color: "var(--ink)",
-              letterSpacing: "0.04em",
-              display: "block",
-              marginBottom: "4px",
-            }}
-          >
-            RASHI GOEL
-          </span>
-          <span
-            style={{
-              fontFamily: "var(--font-ibm-mono), monospace",
-              fontSize: "11px",
-              color: "var(--muted)",
-            }}
-          >
-            rashigoel.io
-          </span>
+          <p className="foot-brand">RASHI GOEL</p>
+          <p className="mono">Health Information Management · Vancouver, BC</p>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <Link
+        <nav className="foot-links" aria-label="Footer">
+          <Link href="/#work">Work</Link>
+          <Link href="/about">About</Link>
+          <Link href="/experience">Experience</Link>
+          <Link href="/contact">Contact</Link>
+        </nav>
+
+        <div className="foot-social">
+          <a
             href="https://www.linkedin.com/in/-rashi-goel/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            style={{ color: "var(--muted)", transition: "color 0.15s" }}
-            onMouseEnter={(e) => { (e.target as HTMLElement).closest("a")!.style.color = "var(--teal)"; }}
-            onMouseLeave={(e) => { (e.target as HTMLElement).closest("a")!.style.color = "var(--muted)"; }}
+            aria-label="LinkedIn profile"
           >
-            <LinkedInIcon size={16} />
-          </Link>
-          <Link
-            href="mailto:hello@rashigoel.io"
-            aria-label="Email"
-            style={{ color: "var(--muted)", transition: "color 0.15s" }}
-            onMouseEnter={(e) => { (e.target as HTMLElement).closest("a")!.style.color = "var(--teal)"; }}
-            onMouseLeave={(e) => { (e.target as HTMLElement).closest("a")!.style.color = "var(--muted)"; }}
-          >
-            <Mail size={16} />
-          </Link>
+            <LinkedInIcon size={17} />
+          </a>
+          <a href="mailto:hello@rashigoel.io" className="mono">
+            hello@rashigoel.io
+          </a>
         </div>
+      </div>
+
+      <div className="wrap foot-base">
+        <p className="mono">© {new Date().getFullYear()} Rashi Goel</p>
+        <p className="mono">rashigoel.io</p>
       </div>
     </footer>
   );

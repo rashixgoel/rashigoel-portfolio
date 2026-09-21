@@ -17,19 +17,29 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-mono",
 });
 
+const TITLE = "Rashi Goel — Health Information Management, Systems & Automation";
+const DESCRIPTION =
+  "Health Information Management student with hands-on clinical operations experience. I look for where time and information get lost in healthcare workflows, then build systems, data and automation around them.";
+
 export const metadata: Metadata = {
-  title: "Rashi Goel | Health Informatics, Interoperability & Data",
-  description:
-    "Portfolio of Rashi Goel, a Health Information Management student in Greater Vancouver working across clinical systems, interoperability, health data, workflow improvement, and responsible automation.",
+  title: {
+    default: TITLE,
+    template: "%s",
+  },
+  description: DESCRIPTION,
   metadataBase: new URL("https://rashigoel.io"),
   openGraph: {
-    title: "Rashi Goel | Health Informatics, Interoperability & Data",
-    description:
-      "Portfolio of Rashi Goel, a Health Information Management student in Greater Vancouver working across clinical systems, interoperability, health data, workflow improvement, and responsible automation.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "https://rashigoel.io",
     siteName: "Rashi Goel",
     locale: "en_CA",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
   },
   robots: {
     index: true,

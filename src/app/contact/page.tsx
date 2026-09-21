@@ -1,116 +1,92 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import { Eyebrow } from "@/components/ui";
 import { LinkedInIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Contact — Rashi Goel",
   description:
-    "Open to conversations about health informatics, digital health, and what it takes to build systems that make care better.",
+    "Open to opportunities across healthcare technology, clinical systems, automation, interoperability, data and technology-enabled operations.",
   openGraph: {
     title: "Contact — Rashi Goel",
     description:
-      "Open to conversations about health informatics, digital health, and what it takes to build systems that make care better.",
+      "Open to opportunities across healthcare technology, clinical systems, automation and health data.",
   },
 };
 
 export default function ContactPage() {
   return (
-    <div style={{ background: "var(--canvas)" }}>
-      {/* ── Hero ── */}
-      <section style={{ background: "var(--surface)", borderBottom: "1px solid var(--border)", padding: "64px 32px 56px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <p style={{
-            fontFamily: "var(--font-ibm-mono), monospace",
-            fontSize: "11px",
-            color: "var(--teal)",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            marginBottom: "16px",
-          }}>
-            Contact
-          </p>
-          <h1 style={{
-            fontFamily: "var(--font-manrope), system-ui, sans-serif",
-            fontSize: "clamp(28px, 4vw, 44px)",
-            fontWeight: 800,
-            color: "var(--ink)",
-            lineHeight: 1.1,
-            letterSpacing: "-0.02em",
-            marginBottom: "16px",
-            maxWidth: "600px",
-          }}>
-            Let&apos;s talk <span style={{ color: "var(--teal)" }}>healthcare.</span>
+    <>
+      <section className="case-hero on-dark">
+        <div className="wrap">
+          <Eyebrow>Contact</Eyebrow>
+          <h1 className="h1" style={{ marginBlock: "18px 24px", maxWidth: "18ch" }}>
+            I&rsquo;m interested in the problems hiding inside everyday workflows.
           </h1>
-          <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.7, maxWidth: "480px" }}>
-            Open to conversations about health informatics, digital health, healthcare technology,
-            and what it takes to build systems that make care better.
-            Always happy to connect with people doing this work.
+          <p className="lede measure">
+            I&rsquo;m currently building toward opportunities across healthcare technology,
+            clinical systems, automation, interoperability, data and technology-enabled
+            operations.
+          </p>
+          <p className="lede measure" style={{ marginTop: "16px" }}>
+            If you are working on one of those problems, I&rsquo;d be glad to connect.
           </p>
         </div>
       </section>
 
-      {/* ── Links ── */}
-      <section style={{ padding: "56px 32px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", maxWidth: "400px" }}>
-            {[
-              {
-                icon: <LinkedInIcon size={20} />,
-                label: "LinkedIn",
-                value: "/in/-rashi-goel",
-                href: "https://www.linkedin.com/in/-rashi-goel/",
-              },
-              {
-                icon: <Mail size={20} />,
-                label: "Email",
-                value: "hello@rashigoel.io",
-                href: "mailto:hello@rashigoel.io",
-              },
-            ].map(({ icon, label, value, href }) => (
-              <Link
-                key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-                style={{
-                  flex: "1 1 160px",
-                  border: "1px solid var(--border)",
-                  borderRadius: "6px",
-                  padding: "24px 20px",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  display: "block",
-                  background: "var(--surface)",
-                  transition: "border-color 0.15s",
-                }}
+      <section className="section bg-white">
+        <div className="wrap">
+          <Reveal>
+            <div className="grid-2" style={{ maxWidth: "760px" }}>
+              <a
+                href="mailto:hello@rashigoel.io"
+                className="card card-hover"
+                style={{ textDecoration: "none", display: "block" }}
               >
-                <div style={{ color: "var(--teal)", display: "flex", justifyContent: "center", marginBottom: "10px" }}>
-                  {icon}
-                </div>
-                <p style={{
-                  fontFamily: "var(--font-ibm-mono), monospace",
-                  fontSize: "10px",
-                  color: "var(--muted)",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  marginBottom: "4px",
-                }}>
-                  {label}
+                <p className="cap-h">Email</p>
+                <p style={{ fontSize: "17px", fontWeight: 700, marginBottom: "6px" }}>
+                  hello@rashigoel.io
                 </p>
-                <p style={{
-                  fontFamily: "var(--font-ibm-mono), monospace",
-                  fontSize: "11px",
-                  color: "var(--ink)",
-                  fontWeight: 700,
-                }}>
-                  {value}
+                <p className="mono" style={{ color: "var(--blue)" }}>
+                  Send a message →
                 </p>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/-rashi-goel/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card card-hover"
+                style={{ textDecoration: "none", display: "block" }}
+              >
+                <p className="cap-h">
+                  <span
+                    style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+                  >
+                    <LinkedInIcon size={13} /> LinkedIn
+                  </span>
+                </p>
+                <p style={{ fontSize: "17px", fontWeight: 700, marginBottom: "6px" }}>
+                  /in/-rashi-goel
+                </p>
+                <p className="mono" style={{ color: "var(--blue)" }}>
+                  Connect ↗
+                </p>
+              </a>
+            </div>
+
+            <div style={{ marginTop: "44px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <Link href="/#work" className="btn btn-ghost">
+                View my work
               </Link>
-            ))}
-          </div>
+              <Link href="/experience" className="btn btn-ghost">
+                Experience
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
-    </div>
+    </>
   );
 }
