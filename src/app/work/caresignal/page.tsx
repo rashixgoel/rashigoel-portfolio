@@ -7,7 +7,7 @@ import { projectLinks } from "@/lib/projects";
 import { Callout, Flow, Pull, Tags } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "CareSignal — FHIR Clinical Decision Support Prototype | Rashi Goel",
+  title: "CareSignal | Clinical Decision Support | Rashi Goel",
   description:
     "A FHIR-based clinical decision-support prototype applying nine deterministic rules across four chronic conditions to surface and prioritize potential care gaps.",
   openGraph: {
@@ -335,7 +335,7 @@ export default function CareSignalPage() {
         </Reveal>
       </CaseSection>
 
-      <CaseNext href="/work/clinicflow" label="ClinicFlow" />
+      <CaseNext href="/work/faxbridge" label="FaxBridge" />
     </>
   );
 }

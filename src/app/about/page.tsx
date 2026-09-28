@@ -5,18 +5,18 @@ import Reveal from "@/components/Reveal";
 import { Arrow, BList, Eyebrow, Pull, Tags } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "About — Rashi Goel",
+  title: "About | Rashi Goel",
   description:
-    "I became interested in healthcare technology by working inside the workflow. Health Information Management student at Douglas College, working across clinical systems, interoperability, automation and health data.",
+    "Rashi Goel is a Health Information Management student exploring clinical systems, interoperability, health data, responsible AI, and healthcare technology.",
   openGraph: {
-    title: "About — Rashi Goel",
+    title: "About | Rashi Goel",
     description:
-      "I became interested in healthcare technology by working inside the workflow.",
+      "Rashi Goel is a Health Information Management student exploring clinical systems, interoperability, health data, responsible AI, and healthcare technology.",
   },
 };
 
 const timeline = [
-  ["2023", "Started Bachelor of Science in Health Information Management"],
+  ["2023", "Started Bachelor of Science in Health Information Management, Douglas College"],
   ["2024", "Began peer tutoring at Douglas College"],
   ["2025", "Joined Columbia Integrated Health Centre"],
   ["2026", "Built CareSignal"],
@@ -24,18 +24,16 @@ const timeline = [
   ["2026", "Earned ECBA"],
   ["2026", "Joined BCHIMSS communications team"],
   ["2026", "Built ClinicFlow"],
-  ["2027", "Expected BSc HIM graduation"],
+  ["2027", "Expected BSc Health Information Management graduation"],
 ];
 
 const interests = [
-  "Clinical systems",
-  "Healthcare automation",
-  "Interoperability",
-  "Health data",
-  "Process improvement",
-  "AI-enabled workflows",
-  "Technology consulting",
-  "Healthcare communications",
+  "Clinical Systems",
+  "Interoperability & Integration",
+  "Health Data & Analytics",
+  "AI & Automation",
+  "Healthcare Technology Consulting",
+  "Systems & Process Improvement",
 ];
 
 export default function AboutPage() {
@@ -48,12 +46,11 @@ export default function AboutPage() {
             <div>
               <Eyebrow>About</Eyebrow>
               <h1 className="h1" style={{ marginBlock: "18px 24px" }}>
-                I became interested in technology by working inside the workflow.
+                I became interested in healthcare technology by working inside healthcare.
               </h1>
               <p className="lede measure">
                 Health Information Management student at Douglas College, working across clinical
-                systems, interoperability, automation and health data — from inside healthcare
-                operations.
+                systems, interoperability, health data, AI, automation, and systems analysis.
               </p>
             </div>
 
@@ -74,73 +71,152 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Story ── */}
+      {/* ── Story: the operational starting point ── */}
       <section className="section bg-white">
         <div className="wrap-narrow">
           <Reveal>
+            <p className="body">I started on the operational side.</p>
             <p className="body">
-              I work as an administrative assistant in a multidisciplinary healthcare clinic.
+              Working in a multidisciplinary clinic gave me a close view of the information
+              surrounding patient care: appointments, documentation, insurance, referrals, patient
+              questions, practitioner follow-up, and all the small exceptions that do not fit
+              neatly into a standard process.
             </p>
             <p className="body">
-              A normal day can involve appointment scheduling, documentation, insurance claims,
-              patient questions, practitioner follow-up and information moving between several
-              different places.
-            </p>
-            <p className="body">
-              That experience changed the way I look at healthcare technology.
-            </p>
-            <p className="body">
-              I began noticing the invisible work required to keep a workflow moving.
+              The more of that work I saw, the more interested I became in the systems underneath
+              it.
             </p>
           </Reveal>
 
           <Reveal>
-            <div style={{ marginBlock: "40px" }}>
+            <div style={{ marginBlock: "36px" }}>
               <BList
                 items={[
-                  "A document arrives, but its information still needs to be entered somewhere else.",
-                  "An email reaches the clinic, but someone has to read it before knowing where it belongs.",
-                  "The information required to make a decision may already exist, but someone still has to find it.",
+                  "A document can arrive electronically and still require someone to interpret and re-enter its information.",
+                  "A patient chart can contain the information needed for follow-up while still making it difficult to see what requires attention.",
+                  "Two systems can each contain useful information without being able to exchange it meaningfully.",
+                  "And automation can save time while still creating new problems if the rules, exceptions, or consequences are not understood.",
                 ]}
               />
             </div>
           </Reveal>
 
           <Reveal>
-            <p className="body">I became interested in the space between those steps.</p>
             <p className="body">
-              That led me to Health Information Management at Douglas College and eventually into
-              interoperability, workflow analysis, clinical systems, automation and healthcare
-              data.
+              Those questions led me deeper into Health Information Management.
+            </p>
+            <p className="body">
+              My degree has given me a foundation across health data, clinical classification,
+              privacy, information systems, interoperability, analytics, and the realities of
+              healthcare information governance.
             </p>
             <p className="body" style={{ color: "var(--ink)", fontWeight: 600 }}>
-              I learn best by building around problems I understand.
+              But I learn best when I can turn a question into something concrete.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── How each project started ── */}
+      <section className="section bg-ivory rule-top">
+        <div className="wrap">
+          <Reveal>
+            <Eyebrow>Where the projects came from</Eyebrow>
+            <h2 className="h2" style={{ marginBlock: "18px 44px" }}>
+              Each one started as a question.
+            </h2>
           </Reveal>
 
           <Reveal>
-            <div style={{ marginBlock: "40px" }}>
+            <div className="grid-3">
+              {[
+                {
+                  name: "CareSignal",
+                  kind: "a question about clinical decision support",
+                  q: "Could structured patient data be evaluated systematically to identify potential care gaps and help clinicians see who may need attention first?",
+                  href: "/work/caresignal",
+                },
+                {
+                  name: "FaxBridge",
+                  kind: "an interoperability question",
+                  q: "What would it take to make the information inside an incoming clinical document usable by another system without allowing uncertain or unverified information to move forward automatically?",
+                  href: "/work/faxbridge",
+                },
+                {
+                  name: "ClinicFlow",
+                  kind: "an operations problem",
+                  q: "Could routine inbox classification be automated while keeping ambiguous messages and scheduling decisions under staff control?",
+                  href: "/work/clinicflow",
+                },
+              ].map((p) => (
+                <div key={p.name} className="card">
+                  <p
+                    className="mono"
+                    style={{
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "var(--ink)",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {p.name}
+                  </p>
+                  <p className="mono" style={{ marginBottom: "16px" }}>
+                    began with {p.kind}
+                  </p>
+                  <p className="body" style={{ fontSize: "15px", marginBottom: "20px" }}>
+                    {p.q}
+                  </p>
+                  <Link href={p.href} className="alink">
+                    View project <Arrow />
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── The harder questions ── */}
+      <section className="section bg-white rule-top">
+        <div className="wrap-narrow">
+          <Reveal>
+            <p className="body">
+              The technologies are different, but the projects have pushed me toward the same
+              areas: clinical systems, interoperability, health data, AI, automation, and systems
+              analysis.
+            </p>
+            <p className="body">
+              I am especially interested in the point where technical capability meets healthcare
+              reality.
+            </p>
+
+            <div style={{ marginBlock: "36px" }}>
+              <Pull>
+                It is easy to ask whether a technology can do something. I am increasingly
+                interested in whether it should.
+              </Pull>
+            </div>
+
+            <p className="body">The harder questions are the ones that follow:</p>
+            <div style={{ marginBlock: "20px 36px" }}>
               <BList
                 items={[
-                  "FaxBridge began with a question about faxed clinical information.",
-                  "CareSignal began with a question about care gaps buried inside patient data.",
-                  "ClinicFlow began after I read about a real inbox problem and wondered whether I could automate part of it, even though I had never used Power Automate before.",
+                  "What information does it depend on?",
+                  "How will another system interpret the output?",
+                  "What happens when the input is incomplete?",
+                  "How can someone verify what happened?",
+                  "Where does human judgment still matter?",
                 ]}
               />
             </div>
-          </Reveal>
 
-          <Reveal>
-            <p className="body">Each project taught me something different.</p>
-            <p className="body">But they all began the same way:</p>
-
-            <div style={{ marginTop: "32px" }}>
-              <Pull>
-                Why does this workflow work like this?
-                <br />
-                And could it work better?
-              </Pull>
-            </div>
+            <p className="body">That is the kind of work I want to keep getting better at.</p>
+            <p className="body">
+              The common thread is not one tool, one workflow, or one job title. I am interested
+              in how healthcare information systems can be designed, connected, analyzed, and
+              improved so that the information people need becomes easier to use.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -173,7 +249,7 @@ export default function AboutPage() {
       <section className="section bg-white rule-top">
         <div className="wrap">
           <Reveal>
-            <Eyebrow>What I&rsquo;m interested in</Eyebrow>
+            <Eyebrow>Areas I&rsquo;m interested in</Eyebrow>
             <div style={{ marginTop: "24px" }}>
               <Tags items={interests} />
             </div>
@@ -188,11 +264,11 @@ export default function AboutPage() {
             <div className="split split-top">
               <div>
                 <p className="cap-h">Education</p>
-                <h3 className="h3" style={{ marginBottom: "4px" }}>
+                <h2 className="h3" style={{ marginBottom: "4px" }}>
                   Bachelor of Science
                   <br />
                   Health Information Management
-                </h3>
+                </h2>
                 <p className="mono" style={{ marginBottom: "20px" }}>
                   Douglas College · 2023 — 2027
                 </p>
@@ -217,12 +293,11 @@ export default function AboutPage() {
                   </span>
                 </div>
 
-                <p className="cap-h">Awards</p>
+                <p className="cap-h">Selected recognition</p>
                 <BList
                   items={[
                     "Student Award for Educational Excellence",
                     "International Returning Scholarship",
-                    "Student Leader Award Nominee",
                   ]}
                 />
               </div>
@@ -235,7 +310,10 @@ export default function AboutPage() {
                     ["SNOMED CT Foundation", "SNOMED International · 2026"],
                     ["FOIPPA Foundations", "BC Ministry of Citizens’ Services · 2025"],
                   ].map(([name, org]) => (
-                    <div key={name} style={{ borderLeft: "2px solid var(--blue)", paddingLeft: "16px" }}>
+                    <div
+                      key={name}
+                      style={{ borderLeft: "2px solid var(--blue)", paddingLeft: "16px" }}
+                    >
                       <p style={{ fontSize: "15px", fontWeight: 600 }}>{name}</p>
                       <p className="mono">{org}</p>
                     </div>

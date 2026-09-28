@@ -225,18 +225,6 @@ a { color: inherit; }
 }
 
 /* ─────────── Metrics ─────────── */
-.metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  overflow: hidden;
-}
-.on-dark .metrics { background: var(--border-dark); border-color: var(--border-dark); }
-.metric { background: var(--white); padding: 26px 22px; }
-.on-dark .metric { background: #10162A; }
 .metric-n {
   font-size: clamp(26px, 3.2vw, 38px);
   font-weight: 800;
@@ -667,15 +655,7 @@ a { color: inherit; }
 }
 .panel.is-dark .panel-k { color: var(--coral); }
 
-/* ─────────── Featured project ─────────── */
-.feature {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  overflow: hidden;
-}
-.feature-head { padding: 44px; border-bottom: 1px solid var(--border); }
-.feature-body { padding: 44px; }
+/* ─────────── Output blocks (case-study diagrams) ─────────── */
 .feature-outs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .out {
   border: 1px solid var(--border);
@@ -690,6 +670,35 @@ a { color: inherit; }
   text-transform: uppercase;
   color: var(--blue);
   margin-bottom: 6px;
+}
+
+/* ─────────── Theme blocks (the recurring questions) ─────────── */
+.theme {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.theme-body { padding: 36px; }
+.theme-visual {
+  padding: 36px;
+  background: var(--ivory);
+  border-left: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.theme-visual > * { width: 100%; }
+
+/* Compact chain used inside the theme blocks */
+.chain-sm { flex-direction: column; }
+.chain-sm .chain-item { padding: 14px 12px; font-size: 10.5px; }
+.chain-sm .chain-arrow { padding: 6px 0; transform: rotate(90deg); }
+
+@media (max-width: 1000px) {
+  .theme { grid-template-columns: 1fr; }
+  .theme-visual { border-left: 0; border-top: 1px solid var(--border); }
 }
 
 /* ─────────── Project card (large) ─────────── */
@@ -931,7 +940,7 @@ a { color: inherit; }
   .pcard, .feature-outs { grid-template-columns: 1fr; }
   .pcard-media { border-left: 0; border-top: 1px solid var(--border); order: -1; }
   .pcard.is-reversed .pcard-media { border-right: 0; }
-  .pcard-body, .feature-head, .feature-body, .panel { padding: 30px; }
+  .pcard-body, .panel, .theme-body, .theme-visual { padding: 30px; }
 }
 
 @media (max-width: 780px) {
@@ -944,7 +953,7 @@ a { color: inherit; }
   .portrait-tag.t2 { right: -6px; }
   .portrait::before { inset: 14px -10px -10px 14px; }
   .hero-h1 { max-width: none; }
-  .pcard-body, .feature-head, .feature-body, .panel { padding: 24px; }
+  .pcard-body, .panel, .theme-body, .theme-visual { padding: 24px; }
   .hero { padding-block: 48px; }
 }
 
@@ -1087,7 +1096,7 @@ a { color: inherit; }
 @media (max-width: 1000px) {
   .split, .split-side { grid-template-columns: 1fr; gap: 40px; }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  .grid-4, .metrics { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .sticky-meta { position: static; }
   .section { padding-block: 72px; }
 }
@@ -1130,7 +1139,7 @@ a { color: inherit; }
 }
 
 @media (max-width: 420px) {
-  .metrics, .grid-4 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

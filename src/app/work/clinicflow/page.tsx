@@ -6,9 +6,9 @@ import { shots } from "@/lib/shots";
 import { Callout, Flow, Note, Pull } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "ClinicFlow — Inbox Automation Prototype | Rashi Goel",
+  title: "ClinicFlow | Healthcare Workflow Automation | Rashi Goel",
   description:
-    "An indPower Automate inbox triage with seven routing categories, Excel logging, Teams cancellation alerts, and testing across 21 realistic emails.",
+    "A Power Automate inbox triage prototype with seven routing categories, Excel logging, Teams cancellation alerts, and testing across 21 realistic emails.",
   openGraph: {
     title: "ClinicFlow — What if incoming emails could find the right place on their own?",
     description:
@@ -97,8 +97,8 @@ export default function ClinicFlowPage() {
         ]}
       >
         <p className="lede">
-          An independent inbox automation prototype built after reading that CHANGEpain staff
-          spent 2&ndash;3 hours each day manually sorting emails.
+          A Power Automate inbox workflow that routes clinic emails, logs every classification,
+          flags cancellations for staff, and was tested against 21 realistic scenarios.
         </p>
         <div style={{ marginTop: "26px" }}>
           <Note>
@@ -552,7 +552,7 @@ export default function ClinicFlowPage() {
         </Reveal>
       </CaseSection>
 
-      <CaseNext href="/work/faxbridge" label="FaxBridge" />
+      <CaseNext href="/work/caresignal" label="CareSignal" />
     </>
   );
 }

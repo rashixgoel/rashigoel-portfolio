@@ -7,7 +7,7 @@ import { projectLinks } from "@/lib/projects";
 import { BList, Callout, Flow, FlowBranch, Pull } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "FaxBridge — AI-Assisted Clinical Document Intake | Rashi Goel",
+  title: "FaxBridge | Clinical Interoperability | Rashi Goel",
   description:
     "An independent prototype exploring how information inside faxed clinical PDFs could be extracted, structured as FHIR resources and verified by a human before reaching a patient record.",
   openGraph: {
@@ -277,7 +277,7 @@ export default function FaxBridgePage() {
         </Reveal>
       </CaseSection>
 
-      <CaseNext href="/work/caresignal" label="CareSignal" />
+      <CaseNext href="/work/clinicflow" label="ClinicFlow" />
     </>
   );
 }

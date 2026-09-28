@@ -18,19 +18,6 @@ export function Arrow() {
   return <span className="arw" aria-hidden="true">→</span>;
 }
 
-export function Metrics({ items }: { items: { n: string; l: string }[] }) {
-  return (
-    <div className="metrics">
-      {items.map((m) => (
-        <div key={m.l} className="metric">
-          <p className="metric-n">{m.n}</p>
-          <p className="metric-l">{m.l}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export type FlowStep = { t: string; s?: string; tone?: "accent" | "coral" };
 
 export function Flow({ steps }: { steps: FlowStep[] }) {
