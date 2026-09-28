@@ -8,7 +8,7 @@ import { Callout, Flow, Note, Pull } from "@/components/ui";
 export const metadata: Metadata = {
   title: "ClinicFlow | Healthcare Workflow Automation | Rashi Goel",
   description:
-    "A Power Automate inbox triage prototype with seven routing categories, Excel logging, Teams cancellation alerts, and testing across 21 realistic emails.",
+    "An independent Power Automate inbox-triage prototype informed by real multidisciplinary-clinic operations: seven routing categories, Excel logging, Teams cancellation alerts, and testing across 21 realistic emails.",
   openGraph: {
     title: "ClinicFlow — What if incoming emails could find the right place on their own?",
     description:
@@ -102,9 +102,8 @@ export default function ClinicFlowPage() {
         </p>
         <div style={{ marginTop: "26px" }}>
           <Note>
-            Inspired by CHANGEpain&rsquo;s co-op posting. Not affiliated with or commissioned by
-            CHANGEpain. Built and tested using fictional emails in my own Microsoft 365
-            environment.
+            Independent prototype informed by my experience working in a busy multidisciplinary
+            clinic. Built and tested using fictional emails in my own Microsoft 365 environment.
           </Note>
         </div>
       </CaseHero>
@@ -112,7 +111,7 @@ export default function ClinicFlowPage() {
       {/* ── 01 The challenge — narrative only ── */}
       <CaseSection
         num="01 — The challenge"
-        title="I understood where those hours could disappear."
+        title="I understood how much attention a shared inbox can require."
         tone="white"
       >
         <Reveal>
@@ -120,16 +119,18 @@ export default function ClinicFlowPage() {
             <div className="measure">
               <p className="body">
                 I work as an administrative assistant in a multidisciplinary clinic. Between
-                bookings, coverage questions, patient follow-ups and documentation, I know how
-                much attention a shared inbox can require.
+                bookings, coverage questions, patient follow-ups, documentation, and other
+                day-to-day inquiries, I see how quickly a shared inbox can become another workflow
+                that demands constant attention.
               </p>
+              <p className="body">That made me curious about a simple problem:</p>
               <p className="body">
-                When I read that CHANGEpain staff were spending 2&ndash;3 hours each day manually
-                sorting emails, the problem felt immediately familiar.
+                Could routine messages find the right place automatically without forcing staff to
+                give up control over the decisions that still need judgment?
               </p>
-              <p className="body">I had never used Power Automate.</p>
+              <p className="body">I had never used Power Automate before.</p>
               <p className="body" style={{ color: "var(--ink)", fontWeight: 600 }}>
-                But now I had a real reason to learn it.
+                But now I had a real problem to learn it around.
               </p>
             </div>
 
@@ -161,10 +162,18 @@ export default function ClinicFlowPage() {
         tone="white"
       >
         <Reveal>
-          <p className="body measure" style={{ marginBottom: "36px" }}>
-            I reviewed CHANGEpain&rsquo;s public information to understand its services, intake
-            pathways and common types of patient inquiries. That informed seven categories:
-          </p>
+          <div className="measure" style={{ marginBottom: "36px" }}>
+            <p className="body">
+              I designed the categories around common inquiry types found in a busy
+              multidisciplinary clinic, informed by my own experience working in one.
+            </p>
+            <p className="body">
+              The goal was not to model every possible message. It was to create a simple
+              structure that could handle recurring administrative requests while leaving
+              unmatched messages available for staff review.
+            </p>
+            <p className="body">That led to seven categories:</p>
+          </div>
 
           <ul className="cats">
             {categories.map((c) => (

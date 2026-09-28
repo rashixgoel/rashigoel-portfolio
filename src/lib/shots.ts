@@ -14,8 +14,8 @@ export const shots = {
   clinicflowFullFlow: {
     src: "/images/clinicflow/clinicflow-full-flow.jpg",
     w: 2932,
-    h: 1668,
-    alt: "Power Automate flow named Changepain Email Triage: a when-a-new-email-arrives trigger, two initialised variables and a SearchText step, followed by six category conditions — Bookings, Private Pay, Referrals, Third-Party, Prescriptions and Cancellations — then a Switch with seven cases and an Excel add-a-row step at the end.",
+    h: 1488,
+    alt: "Power Automate inbox-triage flow: a when-a-new-email-arrives trigger, two initialised variables and a SearchText step, followed by six category conditions — Bookings, Private Pay, Referrals, Third-Party, Prescriptions and Cancellations — then a Switch with seven cases and an Excel add-a-row step at the end.",
     caption:
       "Complete Power Automate flow — incoming mail moves through classification logic before routing, logging and cancellation alerts.",
   },
@@ -46,8 +46,8 @@ export const shots = {
   clinicflowExcel: {
     src: "/images/clinicflow/clinicflow-testing-log.jpg",
     w: 2632,
-    h: 1316,
-    alt: "Excel Online workbook named Changepain Triage Log with Timestamp, Sender, Subject, Category and Source columns and twenty-one logged test emails, each assigned a category such as Cancellations, Bookings, Referrals and Waitlist, Prescriptions and Medication, Third-Party Claims, Private Pay and Fees, or General.",
+    h: 1206,
+    alt: "Excel Online triage log with Timestamp, Sender, Subject, Category and Source columns and twenty-one logged test emails, each assigned a category such as Cancellations, Bookings, Referrals and Waitlist, Prescriptions and Medication, Third-Party Claims, Private Pay and Fees, or General.",
     caption:
       "Each test email was logged with its assigned category so expected and actual routing could be compared.",
   },
